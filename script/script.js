@@ -51,9 +51,13 @@ class Slider {
         let moveSize = btn === this.nextBtn ? -this.moveSize : this.moveSize
 
         btn.disabled = true
+      this.nextBtn.style = `opacity:0`
+      this.prevBtn.style = `opacity:0`
         setTimeout(() => {
             btn.disabled = false
-        }, this.sliderTransition * 2);
+            this.nextBtn.style = `opacity:1`
+            this.prevBtn.style = `opacity:1`
+        }, this.sliderTransition-10);
 
         for (let i = 0; i < this.slides.length; i++) {
             this.slides[i].style.transition = '0ms'
@@ -95,6 +99,7 @@ new Slider({
 })
 
 
+
 const hamburger = document.querySelector(' .hamburger')
 const mobileMenu = document.querySelector(' .nav__list ul')
 const menuItem = document.querySelectorAll('.nav__list ul li a')
@@ -105,7 +110,6 @@ hamburger.addEventListener('click', () => {
     mobileMenu.classList.toggle('active')
 })
 
-
 document.addEventListener('scroll', () => {
     var scrollPosition = window.scrollY;
     if(scrollPosition > 250){
@@ -113,14 +117,11 @@ document.addEventListener('scroll', () => {
     } else{
       nav.style.backgroundColor = 'transparent'  
     }
-   
 })
 
-
-
 menuItem.forEach((item) => {
-    item.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
+    item.addEventListener("click", () => {
+       hamburger.classList.toggle('active');
         mobileMenu.classList.toggle('active')
     })
 })
