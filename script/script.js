@@ -51,12 +51,10 @@ class Slider {
         let moveSize = btn === this.nextBtn ? -this.moveSize : this.moveSize
 
         btn.disabled = true
-      this.nextBtn.style = `opacity:0`
-      this.prevBtn.style = `opacity:0`
+    btn.style = `opacity:0`
         setTimeout(() => {
             btn.disabled = false
-            this.nextBtn.style = `opacity:1`
-            this.prevBtn.style = `opacity:1`
+            btn.style = `opacity:1`
         }, this.sliderTransition-10);
 
         for (let i = 0; i < this.slides.length; i++) {
