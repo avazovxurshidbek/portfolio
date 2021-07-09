@@ -944,6 +944,9 @@ padding: 40px 5px;
   .slider__right h1, p {
     text-align: center;
   }
+   .projects__info p{
+  text-align: left;
+  }
 
   .slider__info {
     height: 500px;
