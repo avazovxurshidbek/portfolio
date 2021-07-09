@@ -350,18 +350,8 @@ text-align: center;
 transition: 0.3s;
 padding: 40px 5px;
 }
-.slider__next img{
-  opacity: 0;
-}
-.slider__prev img{
-  opacity: 0;
-}
-.slider__next:hover img {
-  opacity: 1;
-}
-.slider__prev:hover img {
-  opacity: 1;
-}
+
+
 .slider__controls div {
   height: 32px;
 }
