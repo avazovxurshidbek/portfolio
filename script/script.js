@@ -34,9 +34,19 @@ class Slider {
             }
         }
         // autoplay
-        if (autoplay) this.startInterval()
-        this.slider.addEventListener('mouseenter', () => clearInterval(this.interval))
-        this.slider.addEventListener('mouseleave', () => this.startInterval())
+          if(window.innerWidth<500){
+           var  touchStart ='touchstart'
+           var  touchEnd = 'touchend'
+        } else{
+            var mouseEnter = 'mouseenter'
+            var mouseLeave = 'mouseleave'
+        }
+       
+        this.slider.addEventListener(mouseEnter, () => clearInterval(this.interval))
+        this.slider.addEventListener(mouseLeave, () => this.startInterval()) 
+        
+        this.slider.addEventListener(touchStart, () => clearInterval(this.interval))
+        this.slider.addEventListener(touchEnd, () => this.startInterval())    
 
         // btn
         this.nextBtn.addEventListener('click', () => this.move(this.nextBtn))
